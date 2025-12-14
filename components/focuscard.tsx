@@ -39,11 +39,16 @@ export function FocusCardsDemo() {
       buttonLabel: "Konsultasi sekarang",
       buttonClassName:
       " bg-linear-to-r from-[#719fca] to-[#318285] shadow-[#1f3f6e]/40",
+        href:"/Mental",
     },
     {
         title:"Gaya hidup sehat",
-        descrition:"Atur jadwal hidup sehat, dan bagun kebiasaan harianmu",
-        icon:<LifeBuoy className="h-7 w-7 text-[#318285]"/>
+        description:"Atur jadwal hidup sehat, dan bagun kebiasaan harianmu",
+        icon:<LifeBuoy className="h-7 w-7 text-[#318285]"/>,
+        buttonLabel:"Mulai sekarang",
+        buttonClassName:
+        " bg-linear-to-r from-[#719fca] to-[#318285] shadow-[#1f3f6e]/40",
+        href:"/lifestyle",
     },
 
   ];

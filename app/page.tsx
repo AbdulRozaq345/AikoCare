@@ -62,7 +62,7 @@ const highlightCards2 = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen overflow-x-hidden flex flex-col">
+    <div id="beranda" className="min-h-screen overflow-x-hidden flex flex-col">
       <div className="container border mx-auto min-h-screen py-12 lg:py-16">
         <NavbarDemo />
         <div className="grid grid-cols-1 items-center gap-12 px-4 sm:px-8 lg:grid-cols-2 lg:gap-16">
@@ -86,9 +86,6 @@ export default function Home() {
                 Mulai Konsultasi
               </button>
               </a>
-              <button className="rounded-full border border-[#0f244a] px-8 py-3 text-sm font-semibold uppercase tracking-wider text-[#0f244a] transition hover:-translate-y-0.5 hover:bg-[#0f244a]/5">
-                Lihat Fitur
-              </button>
             </div>
           </div>
           <div className="relative flex items-center justify-center">
@@ -103,7 +100,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <section className="w-full bg-[#bedadc] mt-16">
+      <section id="info" className="w-full bg-[#bedadc] mt-16">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900">
