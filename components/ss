@@ -1,0 +1,40 @@
+"use client";
+import { FocusCards } from "@/components/ui/focus-cards";
+import { Stethoscope, Scale, MessageSquare } from "lucide-react";
+
+export function FocusCardsDemo() {
+  const cards = [
+    {
+      title: "Cek Gejala",
+      description: "Masukkan gejala harianmu untuk dapat insight awal dari Dr. Aiko.",
+      icon: <Stethoscope className="h-8 w-8 text-[#2a9df4]" strokeWidth={2.2} />,
+      iconWrapperClass: "bg-gradient-to-b from-white to-[#e3f3ff]",
+      inputs: ["Masukkan gejala Anda..."],
+      buttonLabel: "Mulai Cek",
+      buttonClass:
+        "bg-gradient-to-r from-[#34d399] to-[#10b981] shadow-[0_10px_25px_rgba(16,185,129,0.35)]",
+    },
+    {
+      title: "Perhitungan BMI",
+      description: "Catat tinggi dan berat untuk memantau progres tubuhmu.",
+      icon: <Scale className="h-8 w-8 text-[#5f68ff]" strokeWidth={2.2} />,
+      iconWrapperClass: "bg-gradient-to-b from-white to-[#eef0ff]",
+      inputs: ["Tinggi (cm)", "Berat (kg)"],
+      buttonLabel: "Lihat Hasil BMI",
+      buttonClass:
+        "bg-gradient-to-r from-[#5f68ff] to-[#3f46e0] shadow-[0_10px_25px_rgba(63,70,224,0.35)]",
+    },
+    {
+      title: "Konsultasi Online",
+      description: "Ceritakan uneg-uneg atau pertanyaanmu, Aiko siap dengerin.",
+      icon: <MessageSquare className="h-8 w-8 text-[#ff9f43]" strokeWidth={2.2} />,
+      iconWrapperClass: "bg-gradient-to-b from-white to-[#fff2e5]",
+      inputs: ["Tuliskan topikmu di sini..."],
+      buttonLabel: "Mulai Konsultasi",
+      buttonClass:
+        "bg-gradient-to-r from-[#ffb347] to-[#ff8a47] shadow-[0_10px_25px_rgba(255,138,71,0.35)]",
+    },
+  ];
+
+  return <FocusCards cards={cards} />;
+}
