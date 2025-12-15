@@ -12,7 +12,7 @@ export function FocusCardsDemo() {
       buttonLabel: "Mulai Cek",
       buttonClassName:
         "bg-linear-to-r from-[#22c55e] to-[#16a34a] shadow-[#22c55e]/40",
-    href: "/chat",
+    href: "/cek",
     },
     {
       title: "Perhitungan BMI",
@@ -30,7 +30,7 @@ export function FocusCardsDemo() {
       buttonLabel: "Chat DR. Aiko",
       buttonClassName:
         "bg-linear-to-r from-[#f97316] to-[#fb7185] shadow-[#f97316]/40",
-    href: "/Konsultasi",
+    href: "/Chat",
     },
     {
       title:"Kesehatan Mental",
@@ -47,7 +47,7 @@ export function FocusCardsDemo() {
         icon:<LifeBuoy className="h-7 w-7 text-[#318285]"/>,
         buttonLabel:"Mulai sekarang",
         buttonClassName:
-        " bg-linear-to-r from-[#719fca] to-[#318285] shadow-[#1f3f6e]/40",
+        " bg-linear-to-r from-[#aaa4e6] to-[#318285] shadow-[#1f3f6e]/40",
         href:"/lifestyle",
     },
 
