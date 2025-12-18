@@ -4,10 +4,10 @@ import MentalPage from '@/components/slection';
 
 function MentalAssessment() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100">
+    <div className="min-h-screen h-full  ">
       <NavbarDemo />
-      <main className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 pb-16 pt-28 sm:px-6 lg:px-8">
-        <section className="rounded-[32px] border border-white/80 bg-white/90 p-8 text-center shadow-[0_40px_95px_-45px_rgba(15,23,42,.35)]">
+      <main className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 pb-16  sm:px-6 lg:px-8">
+        <section className="p-8 text-center ">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-400">
             Self Assessment
           </p>

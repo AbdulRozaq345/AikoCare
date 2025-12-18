@@ -20,6 +20,31 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Connecting to the Laravel API
+
+The app talks to a Laravel backend (Sanctum + session cookies). To avoid TLS/domain mismatches while developing, point the frontend at the same host/port as your Laravel server:
+
+1. **Expose the base URL** – create a `.env.local` file and set:
+
+	```bash
+	NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8000
+	```
+
+	The Axios helper in `lib/axios.ts` reads this variable and falls back to `http://127.0.0.1:8000` when it is missing.
+
+2. **Allow Sanctum cookies** – in `laravel/.env`, set
+
+	```env
+	SANCTUM_STATEFUL_DOMAINS=127.0.0.1:3000,localhost:3000
+	SESSION_DOMAIN=127.0.0.1
+	```
+
+	and ensure `config/cors.php` has `supports_credentials => true` with your frontend origin listed in `allowed_origins`.
+
+3. **Keep protocols consistent** – use plain `http` for both servers unless you have configured HTTPS certificates. Browsers will block `https://localhost` if your Laravel dev server only serves HTTP.
+
+After changing env files, restart both the Laravel server (`php artisan serve`) and Next.js (`npm run dev`) so the new settings are loaded.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

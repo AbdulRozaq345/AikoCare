@@ -4,7 +4,7 @@ import {PlaceholdersAndVanishInputDemo} from '@/components/placehorder'
 function page() {
   return (
     <div>
-        <div className="flex min-h-screen w-full">
+        <div className="flex h-full min-h-screen w-full">
             <aside className='flex max-w-xs '>
                 <SidebarDemo/>
             </aside>

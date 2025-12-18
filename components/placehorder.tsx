@@ -19,7 +19,10 @@ export function PlaceholdersAndVanishInputDemo() {
     console.log("submitted");
   };
   return (
-    <div className="h-[40rem] flex flex-col justify-center  items-center px-4">
+    <div
+      className="flex flex-col items-center justify-center px-4 -top-17 overflow-hidden"
+      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+    >
       <div className="items-center justify-center mb-12">
         <div className=" items-center justify-center px-23 ">
            <p className="text-gray-500 uppercase">
