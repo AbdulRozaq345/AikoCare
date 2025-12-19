@@ -10,7 +10,7 @@ import {
 } from 'react';
 import { useRouter } from 'next/navigation';
 import type { AxiosError } from 'axios';
-import api from '@/lib/axios';
+import api, { API_BASE_URL } from '@/lib/axios';
 import Cookies from 'js-cookie';
 
 type AuthUser = Record<string, unknown> | null;
@@ -47,6 +47,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<AuthUser>(null);
 
     const fetchUser = useCallback(async () => {
+        // If backend URL is not configured, skip network calls to avoid ERR_CONNECTION_REFUSED noise in the console.
+        if (!API_BASE_URL) {
+            setUser(null);
+            return;
+        }
+
         try {
             const res = await api.get('/api/user');
             setUser(res.data ?? null);
@@ -59,6 +65,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         async ({ email, password, setErrors, redirectTo = '/' }: LoginPayload) => {
             setErrors({});
             try {
+                if (!API_BASE_URL) throw new Error('API base URL is not set');
+
                 await api.get('/sanctum/csrf-cookie');
                 await api.post('/login', { email, password });
                 await fetchUser();
@@ -86,6 +94,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         }: RegisterPayload) => {
             setErrors({});
             try {
+                if (!API_BASE_URL) throw new Error('API base URL is not set');
+
                 await api.get('/sanctum/csrf-cookie');
                 await api.post('/register', { name, email, password, password_confirmation });
                 await fetchUser();
@@ -104,6 +114,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     const logout = useCallback(async () => {
         try {
+            if (!API_BASE_URL) throw new Error('API base URL is not set');
+
             await api.get('/sanctum/csrf-cookie');
             const rawXsrf = Cookies.get('XSRF-TOKEN');
             const decodedXsrf = rawXsrf ? decodeURIComponent(rawXsrf) : undefined;

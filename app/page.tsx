@@ -90,7 +90,7 @@ export default function Home() {
           </div>
           <div className="relative flex items-center justify-center">
             <div className="pointer-events-none absolute inset-0 scale-110 rounded-full bg-gradient-to-b from-[#e3f0ff] to-transparent blur-3xl opacity-60" />
-            <div className="sticky top-28 flex items-center justify-center">
+            <div className="sticky top-30 flex items-center justify-center">
               <img
                 src="Aiko.gif"
                 alt="gif DR. Aiko"
