@@ -2,9 +2,15 @@
 import React, { useState } from "react";
 import { PlaceholdersAndVanishInput } from "./ui/placeholders-and-vanish-input";
 
+type ChatMessage = {
+  role: "user" | "ai" | "assitant";
+  text: string;
+};
+
 export function PlaceholdersAndVanishInputDemo() {
   const [aiResponse, setAiResponse] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
 
   const placeholders = [
     "What's the first rule of Fight Club?",
@@ -18,14 +24,19 @@ export function PlaceholdersAndVanishInputDemo() {
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  const form = e.currentTarget;
-  const inputElement = form.querySelector("input") as HTMLInputElement | null;
-  const userMessage = inputElement?.value.trim();
+    const form = e.currentTarget;
+    const inputElement = form.querySelector("input") as HTMLInputElement | null;
+    const userMessage = inputElement?.value.trim();
 
     if (!userMessage) return;
 
-    setIsLoading(true);
-    setAiResponse(`Mencari informasi terkait "${userMessage}"...`);
+  const newUserMsg: ChatMessage = { role: "user", text: userMessage };
+  const updatedMessages = [...messages, newUserMsg];
+
+  setMessages(updatedMessages);
+  setIsLoading(true);
+  setAiResponse(`Mencari informasi terkait "${userMessage}"...`);
+
 
     try {
       const response = await fetch("/api/chat", {
@@ -33,7 +44,9 @@ export function PlaceholdersAndVanishInputDemo() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: userMessage }),
+        // Server expects a string; send the latest user message. If you update the API to handle history,
+        // switch to sending the full array instead: { messages: updatedMessages }
+        body: JSON.stringify({ message: updatedMessages }),
       });
 
       if (!response.ok) {
@@ -46,6 +59,7 @@ export function PlaceholdersAndVanishInputDemo() {
 
       if (aiText) {
         setAiResponse(aiText);
+        setMessages([...updatedMessages, { role: "ai", text: aiText }]);
       } else {
         setAiResponse("Maaf, saya tidak bisa menjawab ini.");
       }
@@ -61,7 +75,7 @@ export function PlaceholdersAndVanishInputDemo() {
   };
 return (
     // Container utama memenuhi tinggi layar (h-screen)
-    <div className="flex flex-col items-center justify-between min-h-screen w-full px-4 pb-10 pt-20 overflow-hidden relative">
+    <div className="flex flex-col items-center justify-between h-screen w-full px-4 -top-12 pt-20 overflow-hidden relative">
       
       {/* 1. AREA KONTEN (Gambar atau Jawaban) */}
       {/* flex-1 akan mengambil semua ruang kosong yang tersedia, mendorong input ke bawah */}
@@ -90,14 +104,14 @@ return (
       </div>
 
       {/* 2. AREA INPUT (Stay di Bawah) */}
-      <div className="w-full max-w-2xl mt-8">
+      <div className="w-full max-w-2xl mt-2">
         <PlaceholdersAndVanishInput
           placeholders={placeholders}
           onChange={handleChange}
           onSubmit={onSubmit}
         />
-        <p className="text-center text-[10px] text-gray-400 mt-4">
-          Aiko dapat membuat kesalahan, jadi periksa kembali responsnya.
+        <p className="text-center text-[13px] text-gray-600 mt-4">
+          ini hanya asisten dokter berbasic ai jadi saran saya lebih baik untuk gejala lebih kosultasi ke dokter ahli
         </p>
       </div>
     </div>

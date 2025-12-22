@@ -1,11 +1,10 @@
 import React from 'react';
-import { NavbarDemo } from '@/components/navbar';
+
 import MentalPage from '@/components/slection';
 
 function MentalAssessment() {
   return (
-    <div className="min-h-screen h-full  ">
-      <NavbarDemo />
+    <div className="min-h-screen h-full py-25 ">
       <main className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 pb-16  sm:px-6 lg:px-8">
         <section className="p-8 text-center ">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-400">

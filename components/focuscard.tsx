@@ -5,16 +5,6 @@ import { MessageCircle, Scale, Stethoscope, Brain,  LifeBuoy, } from "lucide-rea
 export function FocusCardsDemo() {
   const cards = [
     {
-      title: "Cek Gejala",
-      description: "Masukkan gejala kamu biar Dr. Aiko bantu analisanya.",
-      
-      icon: <Stethoscope className="h-7 w-7 text-[#0f9f5f]" />,
-      buttonLabel: "Mulai Cek",
-      buttonClassName:
-        "bg-linear-to-r from-[#22c55e] to-[#16a34a] shadow-[#22c55e]/40",
-    href: "/cek",
-    },
-    {
       title: "Perhitungan BMI",
       description: "Masukkan tinggi dan berat badanmu, langsung dapat hasilnya.",
       icon: <Scale className="h-7 w-7 text-[#2563eb]" />,
@@ -41,15 +31,7 @@ export function FocusCardsDemo() {
       " bg-linear-to-r from-[#719fca] to-[#318285] shadow-[#1f3f6e]/40",
         href:"/Mental",
     },
-    {
-        title:"Gaya hidup sehat",
-        description:"Atur jadwal hidup sehat, dan bagun kebiasaan harianmu",
-        icon:<LifeBuoy className="h-7 w-7 text-[#318285]"/>,
-        buttonLabel:"Mulai sekarang",
-        buttonClassName:
-        " bg-linear-to-r from-[#aaa4e6] to-[#318285] shadow-[#1f3f6e]/40",
-        href:"/lifestyle",
-    },
+
 
   ];
 

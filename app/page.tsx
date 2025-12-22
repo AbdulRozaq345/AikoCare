@@ -9,7 +9,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { NavbarDemo } from "@/components/navbar";
-import Footer from "@/components/footer";
+
 
 const highlightCards = [
   {
@@ -65,7 +65,7 @@ export default function Home() {
     <div id="beranda" className="min-h-screen overflow-x-hidden flex flex-col">
       <div className="container border mx-auto min-h-screen py-12 lg:py-16">
         <NavbarDemo />
-        <div className="grid grid-cols-1 items-center gap-12 px-4 sm:px-8 lg:grid-cols-2 lg:gap-16">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 items-center gap-12 px-4 sm:px-8 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col gap-8 text-left">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-slate-900">
               <TextType
@@ -88,9 +88,9 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="relative flex items-center justify-center">
-            <div className="pointer-events-none absolute inset-0 scale-110 rounded-full bg-gradient-to-b from-[#e3f0ff] to-transparent blur-3xl opacity-60" />
-            <div className="sticky top-30 flex items-center justify-center">
+          <div className="relative flex items-start justify-center order-1 lg:order-2">
+            <div className="absolute pointer-events-none top-23 inset-0 scale-110 rounded-full bg-gradient-to-b from-[#e3f0ff] to-transparent blur-3xl opacity-60" />
+            <div className="relative pt-2 lg:mt-21 flex items-center justify-center">
               <img
                 src="Aiko.gif"
                 alt="gif DR. Aiko"
@@ -172,7 +172,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer/>
+      
     </div>
   );
 }

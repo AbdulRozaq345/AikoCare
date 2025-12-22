@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 
 import React, { useRef, useState } from "react";
+import Image from "next/image";
 
 
 interface NavbarProps {
@@ -233,14 +234,15 @@ export const MobileNavToggle = ({
 export const NavbarLogo = () => {
   return (
     <a
-      href="#"
+      href="/"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <img
-        src="https://assets.aceternity.com/logo-dark.png"
+      <Image
+        src="/logoAiko.png"
         alt="logo"
         width={30}
         height={30}
+        priority
       />
       <span className="font-medium text-black dark:text-white">AikoCare</span>
     </a>

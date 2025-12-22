@@ -61,7 +61,7 @@ export function NavbarDemo() {
             {userName ? (
               <>
                 <a
-                  href="/dashboard"
+                  href="/"
                   className="flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-3 py-1 shadow-sm transition hover:shadow-md"
                 >
                   <img

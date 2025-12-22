@@ -3,12 +3,12 @@
 import React from "react";
 import { NavbarDemo } from "@/components/navbar";
 import BmiCalculator from "@/components/bmi";
-import Footer from "@/components/footer";
+
 function page() {
   
 
   return (
-  <div className="min-h-screen">
+  <div className="min-h-screen py-30">
       <NavbarDemo />
       <main className="mx-auto flex max-w-6xl flex-col gap-10 px-4 sm:px-6 lg:px-8">
         <div className="text-center">
@@ -22,7 +22,7 @@ function page() {
 
         <BmiCalculator />
       </main>
-        <Footer/>
+        
     </div>
   );
 }
