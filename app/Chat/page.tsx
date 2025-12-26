@@ -5,7 +5,7 @@ import { PlaceholdersAndVanishInputDemo } from "@/components/placehorder";
 function ChatPage() {
   return (
     <div className="flex h-full min-h-screen w-full overflow-hidden">
-      <aside className="hidden lg:flex w-72 flex-shrink-0 border-r border-slate-200 bg-white/80 backdrop-blur">
+      <aside className="hidden lg:flex w-72 shrink-0 border-r border-slate-200 bg-white/80 backdrop-blur">
         <SidebarDemo />
       </aside>
       <main className="flex flex-1 items-center justify-center overflow-y-auto p-4 sm:p-6">

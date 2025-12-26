@@ -65,7 +65,7 @@ export default function Home() {
     <div id="beranda" className="min-h-screen overflow-x-hidden flex flex-col">
       <div className="container border mx-auto min-h-screen py-12 lg:py-16">
         <NavbarDemo />
-        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 items-center gap-12 px-4 sm:px-8 lg:grid-cols-2 lg:gap-16">
+        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 items-center gap-12 px-4 sm:px-8 lg:gap-16">
           <div className="flex flex-col gap-8 text-left">
             <div className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-slate-900">
               <TextType
@@ -89,12 +89,12 @@ export default function Home() {
             </div>
           </div>
           <div className="relative flex items-start justify-center order-1 lg:order-2">
-            <div className="absolute pointer-events-none top-23 inset-0 scale-110 rounded-full bg-gradient-to-b from-[#e3f0ff] to-transparent blur-3xl opacity-60" />
+            <div className="absolute pointer-events-none top-23 inset-0 scale-110 rounded-full bg-linear-to-b from-[#e3f0ff] to-transparent blur-3xl opacity-60" />
             <div className="relative pt-2 lg:mt-21 flex items-center justify-center">
               <img
-                src="Aiko.gif"
+                src="/Aiko.gif"
                 alt="gif DR. Aiko"
-                className="h-72 w-72 sm:h-80 sm:w-80 lg:h-[26rem] lg:w-[26rem] object-contain drop-shadow-2xl"
+                className="h-72 w-72 sm:h-80 sm:w-80 lg:h-104 lg:w-104 object-contain drop-shadow-2xl"
               />
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function Home() {
             {highlightCards.map(({ title, description, icon: Icon }) => (
               <article
                 key={title}
-                className="group flex h-full flex-col gap-4 rounded-3xl border border-gray-400 bg-gradient-to-b from-[#f8fbff] to-[#bedadc] p-8 
+                className="group flex h-full flex-col gap-4 rounded-3xl border border-gray-400 bg-linear-to-b from-[#f8fbff] to-[#bedadc] p-8 
                            shadow-[0_10px_30px_rgba(14,35,90,0.06)] 
                            hover:shadow-[0_25px_70px_rgba(14,35,90,0.12)] 
                            transition-all duration-300 ease-out 
@@ -123,7 +123,7 @@ export default function Home() {
               >
                 {/* Icon container with hover effect */}
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-100 bg-white text-[#0f244a] shadow-inner 
-                                group-hover:bg-gradient-to-br group-hover:from-[#e0ecff] group-hover:to-[#d0e2ff] 
+                                group-hover:bg-linear-to-br group-hover:from-[#e0ecff] group-hover:to-[#d0e2ff] 
                                 transition-colors duration-300">
                   <Icon className="h-7 flex items-center justify-center w-7 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.75} />
                 </div>
@@ -155,7 +155,7 @@ export default function Home() {
             {highlightCards2.map(({ title, description, icon: Icon }) => (
               <article
                 key={title}
-                className="flex h-full flex-col items-center gap-4 rounded-[32px] border border-gray-400 p-8 shadow-[0_30px_80px_rgba(15,36,74,0.08)] backdrop-blur transition-transform duration-300 hover:-translate-y-1"
+                className="flex h-full flex-col items-center gap-4 rounded-4xl border border-gray-400 p-8 shadow-[0_30px_80px_rgba(15,36,74,0.08)] backdrop-blur transition-transform duration-300 hover:-translate-y-1"
               >
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl  text-black  shadow-[0_20px_45px_rgba(99,102,241,0.35)]">
                   <Icon className="h-7 w-7" strokeWidth={2} />
